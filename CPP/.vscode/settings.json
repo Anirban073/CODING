@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "iostream": "cpp"
-    }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell"
 }

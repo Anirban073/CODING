@@ -31,7 +31,7 @@ PRODUCTS = [
 async def all_products():
     return PRODUCTS
 
-# read of fetch single dta
+# read or fetch single dta
 @app.get("/product/{product_id}")
 async def single_products(product_id : int):
     for product in PRODUCTS:
@@ -54,6 +54,17 @@ def update_product(product_id:int, new_update_product:dict):
         if product["id"] == product_id:
             PRODUCTS[index] = new_update_product
             return{"status":'updated',"product_id":product_id, "new updated product":new_update_product}
+        
+
+# patch request
+## update partial data
+@app.put("/product/{product_id}")
+def partial_product(product_id:int, new_update_product:dict):
+    for product in PRODUCTS:
+        if product["id"] == product_id:
+            product.update(new_update_product)
+            return{"status":'updated',"product_id":product_id, "new updated product":new_update_product}
+
         
 # delete request
 ## delete data
