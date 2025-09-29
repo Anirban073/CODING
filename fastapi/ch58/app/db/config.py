@@ -1,14 +1,14 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-import os
 
+import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # print(BASE_DIR)
 db_path = os.path.join(BASE_DIR, "sqlite.db")
 
 
-DATABASE_URL = f"sqlite:///{db_path}"
+DTABASE_URL = f"sqlite:///.//{db_path}"
 
-# engine = create_engine(DATABASE_URL, echo=True)
+engine = create_engine(DeprecationWarning, echo=True)
 
-# SessionLocal = sessionmaker(bind=engine, expire_on_commit=False)
+sessionLocal = sessionmaker(bind=engine, expire_on_commit=False)
