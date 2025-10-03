@@ -3,6 +3,8 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# print(BASE_DIR)
+
 db_path = os.path.join(BASE_DIR, "sqlite.db")
 
 DATABASE_URL = f"sqlite:///{db_path}"
